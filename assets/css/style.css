@@ -7,6 +7,11 @@ html {
 
 }
 
+section#berita {
+	height: 400px;
+
+}
+
 /* =================================================================================  */
 /* LOGO */
 .logo img {
@@ -92,7 +97,7 @@ nav li a:hover {
 
 /* ================================================================================== */
 /* BERITA TERBARU */
-#berita .judulNews {
+#berita {
 	font-size: 18px;
 }
 
@@ -101,6 +106,21 @@ nav li a:hover {
 }
 
 #berita .berita-icons span {
+	font-size: 22px;
+	font-weight: 500;
+	font-family: arial, sans-serif;
+}
+
+/* FACILITY */
+#facility {
+	font-size: 18px;
+}
+
+#facility .facility-icons {
+	margin-left: 11px;
+}
+
+#facility .facility-icons span {
 	font-size: 22px;
 	font-weight: 500;
 	font-family: arial, sans-serif;

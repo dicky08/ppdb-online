@@ -7,6 +7,7 @@ class Auth_user extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('User_model', 'user');
+		$this->load->model('Ppdb_model', 'ppdb');
 		$this->load->library('Validate');
 	}
 
@@ -29,7 +30,12 @@ class Auth_user extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-
+	public function register()
+	{
+		$this->load->view('auth/header');
+		$this->load->view('auth/registrasi');
+		$this->load->view('auth/footer');
+	}
 
 	public function registrasi()
 	{
@@ -37,19 +43,152 @@ class Auth_user extends CI_Controller
 		$validation = Validate::validasi();
 
 		$this->form_validation->set_rules('username', 'Username', 'required|trim', $validation, TRUE);
-		$this->form_validation->set_rules('full_name', 'Full Name', 'required|trim', $validation, TRUE);
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]', $validation, TRUE);
-		$this->form_validation->set_rules('password2', 'Password', 'required|matches[password1]', $validation, TRUE);
+		$this->form_validation->set_rules('nik', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('nama_lengkap', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('nama_panggilan', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('tempat_lahir', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('tanggal_lahir', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('agama', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('alamat', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('rt', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('rw', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('desa', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('kec', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('kab', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('anak_ke', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('jmlh_suara_kandung', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('tinggi', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('berat', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('gol_darah', 'Full Name', 'required|trim', $validation, TRUE);
+		// $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]', $validation, TRUE);
+		// $this->form_validation->set_rules('password2', 'Password', 'required|matches[password1]', $validation, TRUE);
 		if ($this->form_validation->run() === false) {
 
 			$this->load->view('auth/header');
 			$this->load->view('auth/register');
 			$this->load->view('auth/footer');
 		} else {
+			if (isset($_POST['submit'])) {
+				# code....
+				$pathAnak = './assets/img-pendaftaran/photo_siswa/';
+				$username 			= $this->input->post('username');
+				$nik 				= $this->input->post('nik');
+				$namaLengkap 		= $this->input->post('nama_lengkap');
+				$namaPanggilan 		= $this->input->post('nama_panggilan');
+				$jk 				= $this->input->post('jk');
+				// $tempatLahir 		= $this->input->post('tempat_lahir');
+				// $tanggalLahir 		= $this->input->post('tanggal_lahir');
+				// $agama 				= $this->input->post('agama');
+				// $alamat 			= $this->input->post('alamat');
+				// $rt 				= $this->input->post('rt');
+				// $rw 				= $this->input->post('rw');
+				// $desa 				= $this->input->post('desa');
+				// $kec 				= $this->input->post('kec');
+				// $kab 				= $this->input->post('kab');
+				// $anakKe 			= $this->input->post('anak_ke');
+				// $jmlhSuaraKandung	= $this->input->post('jmlh_suara_kandung');
+				// $tinggi 			= $this->input->post('tinggi');
+				// $berat 				= $this->input->post('berat');
+				// $gol_darah 			= $this->input->post('gol_darah');
+				// $photoAnak 			= $this->ppdb->uploadFile('photo', $pathAnak);
+				// $extAnak 			= $nik . $photoAnak['file_ext'];
+				// $name				= $photoAnak['file_name'];
+				// rename($pathAnak . $name, $pathAnak . $extAnak);
+
+
+				// DATA AYAH
+				$nikAyah 			= $this->input->post('nik_ayah');
+				// $namaAyah 			= $this->input->post('nama_ayah');
+				// $tempatLahirAyah 	= $this->input->post('tempat_lahir_ayah');
+				// $tanggalLahirAyah 	= $this->input->post('tgl_lahir_ayah');
+				// $pendAyah 			= $this->input->post('pend_terakhir_ayah');
+				// $pekerjaanAyah 		= $this->input->post('pekerjaan_ayah');
+				// $alamatAyah 		= $this->input->post('alamat_ayah');
+				// $rtAyah 			= $this->input->post('rt_ayah');
+				// $rwAyah 			= $this->input->post('rw_ayah');
+				// $desaAyah 			= $this->input->post('desa_ayah');
+				// $kecAyah 			= $this->input->post('kec_ayah');
+				// $kabAyah 			= $this->input->post('kab_ayah');
+				// $photoAyah 			= $this->ppdb->uploadFile('photo_ayah', $pathAnak);
+				// $extAyah 			= $nikAyah . $photoAnak['file_ext'];
+				// rename($pathAnak . $name, $pathAnak . $extAyah);
+
+				// DATA IBU
+				$nikIbu 		 = $this->input->post('nik_ibu');
+				// $namaIbu 		 = $this->input->post('nama_ibu');
+				// $tempatLahirIbu  = $this->input->post('tempat_lahir_ibu');
+				// $tanggalLahirIbu = $this->input->post('tgl_lahir_ibu');
+				// $pedIbu 		 = $this->input->post('pend_terakhir_ibu');
+				// $pekerjaanIbu 	 = $this->input->post('pekerjaan_ibu');
+				// $alamatIbu 		 = $this->input->post('alamat_ibu');
+				// $rtIbu 			 = $this->input->post('rt_ibu');
+				// $rwIbu 			 = $this->input->post('rw_ibu');
+				// $desaIbu 		 = $this->input->post('desa_ibu');
+				// $kecIbu 		 = $this->input->post('kec_ibu');
+				// $kabIbu 		 = $this->input->post('kab_ibu');
+				// $photoIbu 		 = $this->ppdb->uploadFile('photo_ibu', $pathAnak);
+				// $extIbu 		= $nikIbu . $photoAnak['file_ext'];
+				// rename($pathAnak . $name, $pathAnak . $extIbu);
+				var_dump($username);
+				var_dump($nik);
+				var_dump($namaLengkap);
+				var_dump($namaPanggilan);
+				var_dump($jk);
+				var_dump($nikAyah);
+				var_dump($nikIbu);
+				die;
+				// $dataAnak = [
+				// 	'nik_siswa'  			=> $nik,
+				// 	'username' 				=> $username,
+				// 	'nama_lengkap' 			=> $namaLengkap,
+				// 	'nama_panggilan'  		=> $namaPanggilan,
+				// 	'jenis_kelamin'  		=> $jk,
+				// 	'tempat_lahir'  		=> $tempatLahir,
+				// 	'tanggal_lahir'  		=> $tanggalLahir,
+				// 	'agama'  				=> $agama,
+				// 	'alamat'  				=> $alamat . " " . $rt . "/" . $rw . "-" . $desa . "-" . $kec . "-" . $kab,
+				// 	'anak_ke'  				=> $anakKe,
+				// 	'jmlh_saudara_kandung'  => $jmlhSuaraKandung,
+				// 	'berat_badan'  			=> $berat,
+				// 	'tinggi_badan'  		=> $tinggi,
+				// 	'gol_darah' 			=> $gol_darah,
+				// 	'photo'  				=> $extAnak,
+				// 	'nik_ayah'  			=> $nikAyah,
+				// 	'nik_ibu'  				=> $nikIbu
+				// ];
+				// $dataAyah = [
+				// 	'nik_ayah'  				=> $nikAyah,
+				// 	'nama_ayah' 				=> $namaAyah,
+				// 	'tempat_lahir_ayah'  		=> $tempatLahirAyah,
+				// 	'tanggal_lahir_ayah'  		=> $tanggalLahirAyah,
+				// 	'pendidikan_terakhir_ayah'  => $pendAyah,
+				// 	'pekerjaan_ayah'  			=> $pekerjaanAyah,
+				// 	'alamat_ayah'  					=> $alamatAyah . " " . $rtAyah . "/" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
+				// 	'photo_ayah'  				=> $extAyah,
+				// 	'nik_siswa'  				=> $nik
+				// ];
+
+				// $dataIbu = [
+				// 	'nik_ibu'  			 		=> $nikIbu,
+				// 	'nama_ibu' 					=> $namaIbu,
+				// 	'tempat_lahir_ibu'  		=> $tempatLahirIbu,
+				// 	'tanggal_lahir_ibu'  		=> $tanggalLahirIbu,
+				// 	'pendidikan_terakhir_ibu'   => $pedIbu,
+				// 	'pekerjaan_ibu'  			=> $pekerjaanIbu,
+				// 	'alamat_ibu'  				=> $alamatIbu . " " . $rtAyah . "/" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
+				// 	'photo_ibu'  				=> $extIbu,
+				// 	'nik_siswa'  				=> $nik
+				// ];
+
+				// $this->ppdb->insert_data($data, 'coba');
+
+			}
 			$username = $this->input->post('username');
 			$fullName = $this->input->post('full_name');
 			$password = $this->input->post('password1');
 			$cekUsername = $this->db->get_where('user', ['username' => $username])->row_array();
+
+
 			if ($cekUsername) {
 				# code...
 				echo "<script>alert('Username sudah terdaftar!')</script>";
@@ -90,7 +229,6 @@ class Auth_user extends CI_Controller
 			$databaseUser 	= $this->db->get_where('user', ['username' => $username])->row_array();
 
 
-
 			// CEK USER APAKAH SUDAH TERDAFTAR
 			if ($databaseUser) {
 				// CEK PASSWORD SESUAI ATAU TIDAK
@@ -125,7 +263,7 @@ class Auth_user extends CI_Controller
 	public function requestAjax()
 	{
 		$username = $_POST['username'];
-		$database = $this->db->get_where('user', ['username' => $username])->row_array();
+		$database = $this->db->get_where('coba', ['coba1' => $username])->row_array();
 		echo json_encode($database);
 	}
 

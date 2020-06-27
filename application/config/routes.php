@@ -53,6 +53,7 @@ $route['default_controller'] = 'auth_user/dashboard';
 
 // USER ACCOUNT 
 $route['daftar-akun']     	= 'auth_user';
+$route['registrasi']     	= 'auth_user/register';
 $route['user-registrasi'] 	= 'auth_user/registrasi';
 $route['login'] 			= 'auth_user/login';
 $route['user-login']   		= 'auth_user/login';

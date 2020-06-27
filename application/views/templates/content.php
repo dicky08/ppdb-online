@@ -4,11 +4,11 @@
 		<nav class="blue darken-2">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a href="#" class="brand-logo logo">SMAN 2 Cikampek</a>
+					<a href="#" class="brand-logo logo">INSAN KAMIL</a>
 					<a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="sass.html">Home</a></li>
-						<li><a href="badges.html">Components</a></li>
+						<li><a href="sass.html">Beranda</a></li>
+						<li><a href="badges.html">Info Pendaftaran</a></li>
 						<li><a href="<?= site_url('login') ?>">Login</a></li>
 						<li><a href="<?= site_url('daftar-akun') ?>">Daftar</a></li>
 					</ul>
@@ -30,11 +30,10 @@
 	<div class="slider">
 		<ul class="slides">
 			<li>
-				<img src="<?= base_url('assets/') ?>img/slider/school1.jpg" alt="">
+				<img src="<?= base_url('assets/') ?>img/foto/dash.jpeg" alt="">
 				<div class="caption center-align">
 					<h3 class="black-text slidsH3 ">Selamat datang di PPDB ONLINE</h3>
-					<h4 class="light black-text text-lighten-3 slidsH4 ">SMA NEGERI <span class="dua">2</span>
-						CIKAMPEK
+					<h4 class="light black-text text-lighten-3 slidsH4 ">TK INSAN KAMIL
 					</h4>
 				</div>
 			</li>
@@ -73,31 +72,26 @@
 		<div class="row">
 			<div class="col m4 s12">
 				<div class="judul-program">
-					<h2>Program Beasiswa</h2>
+					<h2>Program Bercocok tanam</h2>
 				</div>
 				<div class="narasi">
-					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab soluta nam atque consequatur
-						impedit
-						non veniam, autem eveniet omnis unde.</p>
+					<p>Selain belajar, disini siswa-siswi juga akan diajarkan bagaimana bercocok tanam dengan benar guna dapat mengembangkan potensi dari setiap masing-masing anak.</p>
 				</div>
 			</div>
 			<div class="col m4 s12">
 				<div class="judul-program">
-					<h2>Program Keahlian</h2>
+					<h2>Program Olahraga</h2>
 				</div>
 				<div class="narasi">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam provident magnam cum
-						repellendus
-						voluptas optio harum, quod nostrum quidem ipsam.</p>
+					<p>Program olahraga akan diadakan setiap pagi sebelum kegiatan dimulai agar siswa-siswi selalu berprilaku hidup sehat. Selain itu juga ada kegiatan olahraga yang lain seperti bermain bola, bermain badminton dan yang lainnya, kegiatan yang satu ini dilakukan setiap hari selasa dan kamis di akhir jam pelajaran. </p>
 				</div>
 			</div>
 			<div class="col m4 s12">
 				<div class="judul-program">
-					<h2>Program Kejuruan</h2>
+					<h2>Program Seni</h2>
 				</div>
 				<div class="narasi">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta vel quam ratione odio minima
-						maiores perferendis ipsa. Facilis, maxime assumenda!</p>
+					<p>Disini siswa-siswi akan diajarkan bagaimana caranya menggambar, melukis dan menari bagi yang meiliki minat dalam hal tari.</p>
 				</div>
 			</div>
 		</div>
@@ -119,7 +113,7 @@
 						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Kabupaten<i class="material-icons right">more_vert</i></span>
+						<span class="card-title activator grey-text text-darken-4">Kegiatan Lomba Melukis<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -136,7 +130,7 @@
 						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Kabupaten<i class="material-icons right">more_vert</i></span>
+						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Menari<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -152,7 +146,7 @@
 						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Kabupaten<i class="material-icons right">more_vert</i></span>
+						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Cerdas Cermat <i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -168,7 +162,7 @@
 						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Kabupaten<i class="material-icons right">more_vert</i></span>
+						<span class="card-title activator grey-text text-darken-4">Kegiatan Pariwisita atau Study Tour<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -182,8 +176,63 @@
 	</div>
 </section>
 
-<section id="contact-us">
+<!-- FASILITAS -->
+<section id="facility">
+	<div class="container">
+		<!-- ICONS -->
+		<i class="fas fa-newspaper facility-icons">
+			<span>Fasilitas Taman Bermain</span>
+		</i>
+		<div class="row">
+			<div class="col m6 s12 l4">
+				<div class="card">
+					<div class="card-image responsive-img">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play1.jpeg" data-caption="Hai DICKY">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">Taman Bermain</span>
+					</div>
+				</div>
+			</div>
 
+			<div class="col m6 s12 l4">
+				<div class="card">
+					<div class="card-image responsive-img">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play3.jpeg" data-caption="Hai DICKY">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">Taman Bermain </span>
+					</div>
+				</div>
+			</div>
+
+			<div class="col m6 s12 l4">
+				<div class="card">
+					<div class="card-image responsive-img">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play6.jpeg" data-caption="Hai DICKY">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">Taman Bermain</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col m6 s12 l4">
+				<h2>Kontak Kami</h2>
+				<h6><i class="materiacl-icons">home</i>Alamat : Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quia debitis maxime ex mollitia voluptate dicta minima? Non, enim numquam?</h6>
+				<h6><i class="materiacl-icons">phone</i>No HP : 085496852136</h6>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="contact-us">
 	<div class="fixed-action-btn">
 		<a class="btn-floating btn-large red">
 			<i class="large material-icons">mode_edit</i>
