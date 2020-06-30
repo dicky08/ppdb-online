@@ -1,6 +1,5 @@
 $('#cek').on('click', function () {
 	const username = $('#username').val();
-	console.log(username);
 
 	$.ajax({
 		url: "http://localhost/ppdb-insan-kamil/auth_user/requestAjax",
@@ -10,7 +9,6 @@ $('#cek').on('click', function () {
 			username: username
 		},
 		success: function (data) {
-			console.log(data);
 
 			if (data === null) {
 				$('.null').removeClass('text-danger');

@@ -30,16 +30,16 @@
 	<div class="slider">
 		<ul class="slides">
 			<li>
-				<img src="<?= base_url('assets/') ?>img/foto/dash.jpeg" alt="">
+				<img src="<?= base_url('assets/') ?>img/dash.jpg" alt="">
 				<div class="caption center-align">
-					<h3 class="black-text slidsH3 ">Selamat datang di PPDB ONLINE</h3>
-					<h4 class="light black-text text-lighten-3 slidsH4 ">TK INSAN KAMIL
+					<h3 class="black-text slidsH3">Selamat datang di PPDB ONLINE</h3>
+					<h4 class="light black-text text-lighten-3 slidsH4">TK INSAN KAMIL
 					</h4>
 				</div>
 			</li>
 
 			<li>
-				<img src="<?= base_url('assets/') ?>img/slider/school3.jpg" alt="">
+				<img src=" <?= base_url('assets/') ?>img/dash2.jpg" alt="">
 				<div class="caption left-align">
 					<h3 class="light white-text capt">Selalu berusaha menjadi yang terbaik</h3>
 					<h5>The Quality of Number One!!</h5>
@@ -53,11 +53,33 @@
 <section id="alur-daftar">
 	<div class="container">
 		<div class="row ">
-			<div class="col l12 m12 s12 center-align">
-				<div class="alur"><img src="<?= base_url('assets/') ?>img/alurPpdb.jpg" alt="alur" class="materialboxed " width="1000px">
-				</div>
+			<div class="col l12 m12 s12 justify-content-around">
+				<h4>Alur Pendaftaran</h4>
+				<ol>
+					<h6>
+						<li>
+							Calon siswa/orangtua membuka website ppdb insan kamil
+						</li>
+					</h6>
+					<h6>
+						<li>Calon siswa/orangtua melakukan registrasi</li>
+					</h6>
+					<h6>
+						<li>Calon siswa/orangtua melakukan login</li>
+					</h6>
+					<h6>
+						<li>Calon siswa/orangtua melakukan pembayaran dan upload bukti pembayaran</li>
+					</h6>
+					<h6>
+						<li>Admin akan mengkonfirmasi pendaftaran ketika calon siswa telah membayar biaya pendaftaran</li>
+					</h6>
+					<h6>
+						<li>Status siswa telah aktif menjadi murid di TK Insan Kamil</li>
+					</h6>
+				</ol>
 			</div>
 		</div>
+	</div>
 	</div>
 </section>
 
@@ -66,8 +88,8 @@
 	<div class="container">
 
 		<!-- ICONS -->
-		<i class="fas fa-newspaper program-icons">
-			<span class="program">Program Sekolah</span>
+		<i class="material-icons program-icons">web
+			<span class="program"> Program Sekolah</span>
 		</i>
 		<div class="row">
 			<div class="col m4 s12">
@@ -102,7 +124,7 @@
 <section id="berita">
 	<div class="container">
 		<!-- ICONS -->
-		<i class="fas fa-newspaper berita-icons">
+		<i class="material-icons berita-icons">view_stream
 			<span>Berita Terkini</span>
 		</i>
 		<div class="row">
@@ -110,7 +132,7 @@
 			<div class="col m6 s12 l3">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/lukis.jpg" data-caption="Hai DICKY">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Kegiatan Lomba Melukis<i class="material-icons right">more_vert</i></span>
@@ -127,7 +149,7 @@
 			<div class="col m6 s12 l3">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/tari.jpg">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Menari<i class="material-icons right">more_vert</i></span>
@@ -143,7 +165,7 @@
 			<div class="col m6 s12 l3">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/cerdas.jpg">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Cerdas Cermat <i class="material-icons right">more_vert</i></span>
@@ -159,10 +181,10 @@
 			<div class="col m6 s12 l3">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/news/news1.jpg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/tour.jpg">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Kegiatan Pariwisita atau Study Tour<i class="material-icons right">more_vert</i></span>
+						<span class="card-title activator grey-text text-darken-4">Pariwisita & Study Tour<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
 						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -180,14 +202,14 @@
 <section id="facility">
 	<div class="container">
 		<!-- ICONS -->
-		<i class="fas fa-newspaper facility-icons">
+		<i class="material-icons facility-icons">view_day
 			<span>Fasilitas Taman Bermain</span>
 		</i>
 		<div class="row">
 			<div class="col m6 s12 l4">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play1.jpeg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play1.jpeg">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Taman Bermain</span>
@@ -198,7 +220,7 @@
 			<div class="col m6 s12 l4">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play3.jpeg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play3.jpeg">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Taman Bermain </span>
@@ -209,7 +231,7 @@
 			<div class="col m6 s12 l4">
 				<div class="card">
 					<div class="card-image responsive-img">
-						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play6.jpeg" data-caption="Hai DICKY">
+						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/foto/play6.jpeg">
 					</div>
 					<div class="card-content">
 						<span class="card-title activator grey-text text-darken-4">Taman Bermain</span>
@@ -224,9 +246,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col m6 s12 l4">
-				<h2>Kontak Kami</h2>
-				<h6><i class="materiacl-icons">home</i>Alamat : Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quia debitis maxime ex mollitia voluptate dicta minima? Non, enim numquam?</h6>
-				<h6><i class="materiacl-icons">phone</i>No HP : 085496852136</h6>
+				<h3><i class="material-icons">supervisor_account</i> Kontak Kami</h3>
+				<h6><i class="material-icons">account_balance</i>Alamat : Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quia debitis maxime ex mollitia voluptate dicta minima? Non, enim numquam?</h6>
+				<h6><i class="material-icons">local_phone</i>No HP : 085496852136</h6>
 			</div>
 		</div>
 	</div>

@@ -13,8 +13,9 @@ class Auth_user extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('auth/header');
-		$this->load->view('auth/register');
+		$data['title'] = "Pendaftaran akun";
+		$this->load->view('auth/header', $data);
+		$this->load->view('auth/register', $data);
 		$this->load->view('auth/footer');
 	}
 
@@ -32,13 +33,15 @@ class Auth_user extends CI_Controller
 
 	public function register()
 	{
-		$this->load->view('auth/header');
-		$this->load->view('auth/registrasi');
+		$data['title'] = "Pendaftaran akun";
+		$this->load->view('auth/header', $data);
+		$this->load->view('auth/register', $data);
 		$this->load->view('auth/footer');
 	}
 
 	public function registrasi()
 	{
+		$data['title'] = "Pendaftaran akun";
 
 		$validation = Validate::validasi();
 
@@ -46,26 +49,45 @@ class Auth_user extends CI_Controller
 		$this->form_validation->set_rules('nik', 'Full Name', 'required|trim', $validation, TRUE);
 		$this->form_validation->set_rules('nama_lengkap', 'Full Name', 'required|trim', $validation, TRUE);
 		$this->form_validation->set_rules('nama_panggilan', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('tempat_lahir', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('tanggal_lahir', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('agama', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('alamat', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('rt', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('rw', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('desa', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('kec', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('kab', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('anak_ke', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('jmlh_suara_kandung', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('tinggi', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('berat', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('gol_darah', 'Full Name', 'required|trim', $validation, TRUE);
-		// $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]', $validation, TRUE);
-		// $this->form_validation->set_rules('password2', 'Password', 'required|matches[password1]', $validation, TRUE);
+		$this->form_validation->set_rules('tempat_lahir', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('agama', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('alamat', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('rt', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('rw', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('desa', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('kec', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('kab', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('anak_ke', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('jmlh_suara_kandung', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('tinggi', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('berat', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('gol_darah', 'Full Name', 'required|trim', $validation, TRUE);
+		// AYAH
+		$this->form_validation->set_rules('nik_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('nama_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('tempat_lahir_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('pend_terakhir_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('pekerjaan_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('alamat_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('rt_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('rw_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('kec_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('kab_ayah', 'Full Name', 'required|trim', $validation, TRUE);
+		// IBU
+		$this->form_validation->set_rules('nik_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('nama_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('tempat_lahir_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('pend_terakhir_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('pekerjaan_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('alamat_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('rt_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('rw_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('kec_ibu', 'Full Name', 'required|trim', $validation, TRUE);
+		$this->form_validation->set_rules('kab_ibu', 'Full Name', 'required|trim', $validation, TRUE);
 		if ($this->form_validation->run() === false) {
 
-			$this->load->view('auth/header');
-			$this->load->view('auth/register');
+			$this->load->view('auth/header', $data);
+			$this->load->view('auth/register', $data);
 			$this->load->view('auth/footer');
 		} else {
 			if (isset($_POST['submit'])) {
@@ -93,8 +115,7 @@ class Auth_user extends CI_Controller
 				$photoAnak 			= $this->ppdb->uploadFile('photo', $pathAnak);
 				$extAnak 			= $nik . $photoAnak['file_ext'];
 				$name				= $photoAnak['file_name'];
-				rename($pathAnak . $name, $pathAnak . $extAnak);
-
+				rename($pathAnak . $name, $pathAnak . "anak" . "_" . $extAnak);
 
 				// DATA AYAH
 				$nikAyah 			= $this->input->post('nik_ayah');
@@ -112,7 +133,7 @@ class Auth_user extends CI_Controller
 				$photoAyah 			= $this->ppdb->uploadFile('photo_ayah', $pathAnak);
 				$extAyah 			= $nikAyah . $photoAyah['file_ext'];
 				$nameAyah			= $photoAyah['file_name'];
-				rename($pathAnak . $nameAyah, $pathAnak . $extAyah);
+				rename($pathAnak . $nameAyah, $pathAnak . "ayah" . "_" . $extAyah);
 
 				// DATA IBU
 				$nikIbu 		 = $this->input->post('nik_ibu');
@@ -130,40 +151,9 @@ class Auth_user extends CI_Controller
 				$photoIbu 		 = $this->ppdb->uploadFile('photo_ibu', $pathAnak);
 				$extIbu 		= $nikIbu . $photoAnak['file_ext'];
 				$nameIbu			= $photoIbu['file_name'];
-				rename($pathAnak . $nameIbu, $pathAnak . $extIbu);
-				// var_dump($username);
-				// var_dump($nik);
-				// var_dump($namaLengkap);
-				// var_dump($namaPanggilan);
-				// var_dump($jk);
-				// var_dump($tempatLahir);
-				// var_dump($tanggalLahir);
-				// var_dump($agama);
-				// var_dump($alamat);
-				// var_dump($rt);
-				// var_dump($rw);
-				// var_dump($desa);
-				// var_dump($kec);
-				// var_dump($kab);
-				// var_dump($anakKe);
-				// var_dump($jmlhSuaraKandung);
-				// var_dump($tinggi);
-				// var_dump($berat);
-				// var_dump($gol_darah);
-				// var_dump($extAnak);
-				// var_dump($namaAyah);
-				// var_dump($tempatLahirAyah);
-				// var_dump($tanggalLahirAyah);
-				// var_dump($alamatAyah);
-				// var_dump($rtAyah);
-				// var_dump($rwAyah);
-				// var_dump($desaAyah);
-				// var_dump($kecAyah);
-				// var_dump($kabAyah);
-				// var_dump($pekerjaanAyah);
-				// var_dump($extAyah);
-				// var_dump($nikAyah);
-				// var_dump($nikIbu);
+				rename($pathAnak . $nameIbu, $pathAnak . "ibu" . "_" . $extIbu);
+
+
 
 				$dataAnak = [
 					'nik_siswa'  			=> $nik,
@@ -174,15 +164,14 @@ class Auth_user extends CI_Controller
 					'tempat_lahir'  		=> $tempatLahir,
 					'tanggal_lahir'  		=> $tanggalLahir,
 					'agama'  				=> $agama,
-					'alamat'  				=> $alamat . " " . $rt . "/" . $rw . "-" . $desa . "-" . $kec . "-" . $kab,
+					'alamat'  				=> $alamat . "-" . $rt . "-" . $rw . "-" . $desa . "-" . $kec . "-" . $kab,
 					'anak_ke'  				=> $anakKe,
 					'jmlh_saudara_kandung'  => $jmlhSuaraKandung,
 					'berat_badan'  			=> $berat,
 					'tinggi_badan'  		=> $tinggi,
 					'gol_darah' 			=> $gol_darah,
-					'photo'  				=> $extAnak,
-					'nik_ayah'  			=> $nikAyah,
-					'nik_ibu'  				=> $nikIbu
+					'photo'  				=> "anak" . "_" . $extAnak,
+
 				];
 				$dataAyah = [
 					'nik_ayah'  				=> $nikAyah,
@@ -191,8 +180,8 @@ class Auth_user extends CI_Controller
 					'tanggal_lahir_ayah'  		=> $tanggalLahirAyah,
 					'pendidikan_terakhir_ayah'  => $pendAyah,
 					'pekerjaan_ayah'  			=> $pekerjaanAyah,
-					'alamat_ayah'  					=> $alamatAyah . " " . $rtAyah . "/" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
-					'photo_ayah'  				=> $extAyah,
+					'alamat_ayah'  					=> $alamatAyah . "-" . $rtAyah . "-" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
+					'photo_ayah'  				=> "ayah" . "_" . $extAyah,
 					'nik_siswa'  				=> $nik
 				];
 
@@ -203,84 +192,75 @@ class Auth_user extends CI_Controller
 					'tanggal_lahir_ibu'  		=> $tanggalLahirIbu,
 					'pendidikan_terakhir_ibu'   => $pedIbu,
 					'pekerjaan_ibu'  			=> $pekerjaanIbu,
-					'alamat_ibu'  				=> $alamatIbu . " " . $rtAyah . "/" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
-					'photo_ibu'  				=> $extIbu,
+					'alamat_ibu'  				=> $alamatIbu . "-" . $rtIbu . "-" . $rwIbu . "-" . $desaIbu . "-" . $kecIbu . "-" . $kabIbu,
+					'photo_ibu'  				=> "ibu" . "_" . $extIbu,
 					'nik_siswa'  				=> $nik
 				];
-				var_dump($dataAnak);
-				var_dump($dataAyah);
-				var_dump($dataIbu);
-				die;
+				$dataPendaftaran = [
+					'no_pendaftaran' => 'P002',
+					'tgl_daftar'	 => date('d-m-y'),
+					'nik_siswa'		 => $nik,
+					'nik_ayah'  	 => $nikAyah,
+					'nik_ibu'  		 => $nikIbu,
+					'id_admin'  	 => 1,
+					'no_pembayaran'  => 'B' . time()
+				];
+				$dataPembayaran = [
+					'no_pembayaran'  	=> 'B' . time(),
+					'tgl_bayar'	 		=> date('d-m-y'),
+					'nik'	 			=> $nik,
+					'pemilik_rek'	=> $namaLengkap,
+					'bank'				=> 'mandiri',
+					'bukti_bayar' 		=> 'default.jpg',
+					'status'			=> "Belum Bayar"
 
-				// $this->ppdb->insert_data($data, 'coba');
+				];
 
+				$this->ppdb->insert_data($dataAnak, 'tabel_siswa');
+				$this->ppdb->insert_data($dataAyah, 'tabel_ayah');
+				$this->ppdb->insert_data($dataIbu, 'tabel_ibu');
+				$this->ppdb->insert_data($dataPendaftaran, 'tabel_pendaftaran');
+				$this->ppdb->insert_data($dataPembayaran, 'tabel_pembayaran');
+
+				echo "<script>alert('Selamat anda berhasil registrasi. Silahkan Login!')</script>";
+				redirect('login', 'refresh');
 			}
-			$username = $this->input->post('username');
-			$fullName = $this->input->post('full_name');
-			$password = $this->input->post('password1');
-			$cekUsername = $this->db->get_where('user', ['username' => $username])->row_array();
-
-
-			if ($cekUsername) {
-				# code...
-				echo "<script>alert('Username sudah terdaftar!')</script>";
-				redirect('daftar-akun', 'refresh');
-				exit;
-			}
-			$dataRegistrasi = [
-				'username'  => htmlspecialchars(strip_tags($username, TRUE)),
-				'full_name' => htmlspecialchars(strip_tags($fullName, TRUE)),
-				'password'  => password_hash($password, PASSWORD_DEFAULT),
-				'picture'   => 'default.jpg'
-			];
-			$this->user->insert_data($dataRegistrasi, 'user');
-			echo "<script>alert('Selamat anda berhasil registrasi. Silahkan Login!')</script>";
-			redirect('login', 'refresh');
 		}
 	}
 
 	public function login()
 	{
-		$sesi = $this->session->userdata('sesi');
-		if ($sesi !== null) {
-			redirect('exam');
-		}
+		$data['title'] = "Login";
 
 		$validation = Validate::validasi();
 
 		$this->form_validation->set_rules('username', 'Username', 'required|trim', $validation, TRUE);
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[8]', $validation, TRUE);
+		$this->form_validation->set_rules('tgl_lahir', 'Password', 'required|trim|min_length[8]', $validation, TRUE);
 		if ($this->form_validation->run() === false) {
-			$this->load->view('auth/header');
-			$this->load->view('auth/login');
+			$this->load->view('auth/header', $data);
+			$this->load->view('auth/login', $data);
 			$this->load->view('auth/footer');
 		} else {
 			$username 		= $this->input->post('username');
-			$password 		= $this->input->post('password1');
-			$remember 		= $this->input->post('r');
-			$databaseUser 	= $this->db->get_where('user', ['username' => $username])->row_array();
-
+			$password 		= $this->input->post('tgl_lahir');
+			$databaseUser 	= $this->db->get_where('tabel_siswa', ['username' => $username])->row_array();
 
 			// CEK USER APAKAH SUDAH TERDAFTAR
 			if ($databaseUser) {
 				// CEK PASSWORD SESUAI ATAU TIDAK
 				$uname 			= $databaseUser['username'];
-				$pass 			= $databaseUser['password'];
-				if (password_verify($password, $pass)) {
+				$pass 			= $databaseUser['tanggal_lahir'];
+
+				if ($password == $pass) {
 					$dataSession = [
 						'username' => $uname,
-						'full_name' => $databaseUser['full_name']
+						'nama_lengkap' => $databaseUser['nama_lengkap']
 					];
 
 					$this->session->set_userdata('sesi', $dataSession);
-					date_default_timezone_set('asia/jakarta');
-					if ($remember !== null) {
-						# code...
-						setcookie('nama', $uname, time() + 60);
-					}
+
 					echo "<script>alert('Login berhasil!')</script>";
-					redirect('exam', 'refresh');
-					// redirect('user', 'refresh');
+					redirect('user', 'refresh');
 				} else {
 					echo "<script>alert('Login gagal!')</script>";
 					redirect('login', 'refresh');
@@ -292,10 +272,13 @@ class Auth_user extends CI_Controller
 		}
 	}
 
+	public function ajax()
+	{
+	}
 	public function requestAjax()
 	{
 		$username = $_POST['username'];
-		$database = $this->db->get_where('coba', ['coba1' => $username])->row_array();
+		$database = $this->db->get_where('tabel_siswa', ['username' => $username])->row_array();
 		echo json_encode($database);
 	}
 

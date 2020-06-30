@@ -12,6 +12,7 @@ section#berita {
 
 }
 
+
 /* =================================================================================  */
 /* LOGO */
 .logo img {
@@ -44,6 +45,7 @@ nav li a:hover {
 
 .slidsH3 {
 	font-size: 50px;
+	margin-top: 80px;
 }
 
 .slidsH4 {

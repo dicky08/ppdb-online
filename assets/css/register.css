@@ -8,20 +8,29 @@
 	background-color: rgb(205, 205, 207);
 }
 
-
 .cek {
 	margin-top: -4px;
 }
 
+.text h3 {
+	font-size: 34px;
+	margin-top: -5px;
 
+}
 
 .text h3,
 h2 {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+	font-family: gabriola;
+	font-weight: bold;
 }
 
 /* LOGIN */
+.login-box-body {
+	box-shadow: 3px 3px 1px white;
+}
+
 #login {
 	width: 450px;
 	margin: 150px auto;

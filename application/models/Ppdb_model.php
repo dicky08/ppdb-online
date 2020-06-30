@@ -11,6 +11,19 @@ class Ppdb_model extends CI_Model
 	{
 		return $this->db->get($table);
 	}
+	function getOneData($data, $table)
+	{
+		return $this->db->get_where($table, $data);
+	}
+
+	function joinTableSiswa($username)
+	{
+		$this->db->select('tabel_pembayaran.status,tabel_pembayaran.nik,tabel_siswa.*')
+			->from('tabel_siswa')
+			->join('tabel_pembayaran', 'tabel_siswa.nik_siswa=tabel_pembayaran.nik')
+			->where("tabel_siswa.username", $username);
+		return	$this->db->get();
+	}
 	public function uploadFile($name, $path)
 	{
 		if (!file_exists($path))

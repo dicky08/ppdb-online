@@ -52,11 +52,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'auth_user/dashboard';
 
 // USER ACCOUNT 
-$route['daftar-akun']     	= 'auth_user';
-$route['registrasi']     	= 'auth_user/register';
-$route['user-registrasi'] 	= 'auth_user/registrasi';
-$route['login'] 			= 'auth_user/login';
-$route['user-login']   		= 'auth_user/login';
-$route['dashboard']    		= 'user/dashboard';
-$route['404_override'] 		= '';
+$route['daftar-akun']         = 'auth_user';
+$route['registrasi']         = 'auth_user/register';
+$route['user-registrasi']     = 'auth_user/registrasi';
+$route['dataPendaftaran']     = 'user/pendaftaran';
+$route['login']             = 'auth_user/login';
+$route['dashboard']            = 'user/dashboard';
+$route['pembayaran']            = 'user/pembayaran';
+$route['cetakPendaftaran']            = 'user/cetak';
+
+
+$route['logout']            = 'user/logout';
+$route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

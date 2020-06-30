@@ -2,8 +2,9 @@
 	<div class="row box">
 		<div class="login-box-body">
 			<div class="col l12 text">
-				<h3>Registrasi</h3>
+				<h3>Pendaftaran (Registrasi)</h3>
 				<h2>TK INSAN KAMIL</h2>
+
 			</div>
 			<form action="<?= site_url('user-registrasi') ?>" method="post" enctype="multipart/form-data">
 				<div class="row anak">
@@ -20,7 +21,7 @@
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							<input type="text" id="nik" name="nik" placeholder="Nik" class="form-control" value="<?= set_value('nik') ?>">
-							<?= form_error('coba', '<small class="text-danger pl-3 ">', '</small>') ?>
+							<?= form_error('nik', '<small class="text-danger pl-3 ">', '</small>') ?>
 						</div>
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -34,8 +35,8 @@
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							<select name="jk" id="jk" class="form-control" required>
 								<option value="">~ Jenis Kelamin ~</option>
-								<option value="l">Laki-Laki</option>
-								<option value="p">Perempuan</option>
+								<option value="laki-laki">Laki-Laki</option>
+								<option value="perempuan">Perempuan</option>
 							</select>
 						</div>
 						<div class="form-group has-feedback">
@@ -61,13 +62,13 @@
 							<div class="col-md-3">
 								<div class="form-group has-feedback">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-									<input type="number" class="form-control" id="rt" placeholder="RT" name="rt" value="<?= set_value('rt') ?>">
+									<input type="text" class="form-control" id="rt" placeholder="RT" name="rt" value="<?= set_value('rt') ?>">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group has-feedback">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-									<input type="number" class="form-control" id="rw" placeholder="RW" name="rw" value="<?= set_value('rw') ?>">
+									<input type="text" class="form-control" id="rw" placeholder="RW" name="rw" value="<?= set_value('rw') ?>">
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -134,11 +135,12 @@
 					<div class="container">
 						<h3>Data Orangtua</h3>
 					</div>
-					<!-- DATA AYAH -->
+					<!-- DATA AYAH  -->
 					<div class="col-md-6">
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							<input type="text" id="nik_ayah" name="nik_ayah" placeholder="Nik Ayah" class="form-control" value="<?= set_value('nik_ayah') ?>">
+							<?= form_error('nik_ayah', '<small class="text-danger pl-3 ">', '</small>') ?>
 						</div>
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -148,9 +150,9 @@
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							<input type="text" id="tempat_lahir_ayah" name="tempat_lahir_ayah" placeholder="Tempat Lahir Ayah" class="form-control" value="<?= set_value('tempat_lahir_ayah') ?>">
 						</div>
-						<div class="form-group has-feedback">
-							<span class="glyphicon glyphicon-user form-control-feedback"></span>
-							<input type="date" id="tgl_lahir_ayah" name="tgl_lahir_ayah" placeholder="Tanggal Lahir Ayah" class="form-control" value="<?= set_value('tgl_lahir_ayah') ?>">
+						<div class="form-group">
+							<label for="tgl_lahir_ayah">Tgl Lahir</label>
+							<input type="date" id="tgl_lahir_ayah" class="form-control" name="tgl_lahir_ayah" placeholder="Tanggal Lahir Ayah" class="form-control" value="<?= set_value('tgl_lahir_ayah') ?>">
 						</div>
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -168,13 +170,13 @@
 							<div class="col-md-3">
 								<div class="form-group has-feedback">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-									<input type="number" class="form-control" id="rt_ayah" placeholder="RT" name="rt_ayah" value="<?= set_value('rt_ayah') ?>">
+									<input type="text" class="form-control" id="rt_ayah" placeholder="RT" name="rt_ayah" value="<?= set_value('rt_ayah') ?>">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group has-feedback">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-									<input type="number" class="form-control" id="rw_ayah" placeholder="RW" name="rw_ayah" value="<?= set_value('rw_ayah') ?>">
+									<input type="text" class="form-control" id="rw_ayah" placeholder="RW" name="rw_ayah" value="<?= set_value('rw_ayah') ?>">
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -198,10 +200,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group has-feedback">
-							<span class="glyphicon glyphicon-user form-control-feedback"></span>
+						<div class="form-group ">
 							<label for="photo_ayah">Photo</label>
-							<input type="file" id="photo_ayah" name="photo_ayah" placeholder="Photo Ayah (jpg,jpeg,png)" class="form-control" value="<?= set_value('photo_ayah') ?>">
+							<input type="file" id="photo_ayah" class="form-control" name="photo_ayah" placeholder="Photo Ayah (jpg,jpeg,png)" class="form-control" value="<?= set_value('photo_ayah') ?>">
 						</div>
 					</div>
 
@@ -210,6 +211,7 @@
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							<input type="text" id="nik_ibu" name="nik_ibu" placeholder="Nik Ibu" class="form-control" value="<?= set_value('nik_ibu') ?>">
+							<?= form_error('nik_ibu', '<small class="text-danger pl-3 ">', '</small>') ?>
 						</div>
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -219,9 +221,9 @@
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							<input type="text" id="tempat_lahir_ibu" name="tempat_lahir_ibu" placeholder="Tempat Lahir Ibu" class="form-control" value="<?= set_value('tempat_lahir_ibu') ?>">
 						</div>
-						<div class="form-group has-feedback">
-							<span class="glyphicon glyphicon-user form-control-feedback"></span>
-							<input type="date" id="tgl_lahir_ibu" name="tgl_lahir_ibu" placeholder="Tanggal Lahir" class="form-control" value="<?= set_value('tgl_lahir_ibu') ?>">
+						<div class="form-group">
+							<label for="tgl_lahir_ibu">Tgl Lahir</label>
+							<input type="date" id="tgl_lahir_ibu" class="form-control" name="tgl_lahir_ibu" placeholder="Tanggal Lahir" class="form-control" value="<?= set_value('tgl_lahir_ibu') ?>">
 						</div>
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -239,13 +241,13 @@
 							<div class="col-md-3">
 								<div class="form-group has-feedback">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-									<input type="number" class="form-control" id="rt_ibu" placeholder="RT" name="rt_ibu" value="<?= set_value('rt_ibu') ?>">
+									<input type="text" class="form-control" id="rt_ibu" placeholder="RT" name="rt_ibu" value="<?= set_value('rt_ibu') ?>">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group has-feedback">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
-									<input type="number" class="form-control" id="rw_ibu" placeholder="RW" name="rw_ibu" value="<?= set_value('rw_ibu') ?>">
+									<input type="text" class="form-control" id="rw_ibu" placeholder="RW" name="rw_ibu" value="<?= set_value('rw_ibu') ?>">
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -269,10 +271,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group has-feedback">
-							<span class="glyphicon glyphicon-user form-control-feedback"></span>
+						<div class="form-group">
 							<label for="photo_ibu">Photo</label>
-							<input type="file" id="photo_ibu" name="photo_ibu" placeholder="Photo Ibu (jpg,jpeg,png)" class="form-control" value="<?= set_value('photo_ibu') ?>">
+							<input type="file" id="photo_ibu" class="form-control" name="photo_ibu" placeholder="Photo Ibu (jpg,jpeg,png)" class="form-control" value="<?= set_value('photo_ibu') ?>">
 						</div>
 						<div class="form-group has-feedback">
 							<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -282,9 +283,10 @@
 				</div>
 
 				<div class="form-group">
-					<a class="btn btn-primary btn-sm lanjut1">Lanjutkan1</a>
-					<a class="btn btn-primary btn-sm kembali1">kembali1</a>
-					<button type="submit" name="submit" class="btn btn-primary btn-sm simpan">Simpan</button>
+					<a class="btn btn-success lanjut1">1 Langkah lagi</a>
+					<a class="btn btn-primary kembali1">Kembali1</a>
+					<button type="submit" name="submit" class="btn btn-primary simpan">Simpan</button>
+					<a href="<?= site_url('login'); ?>" class="btn btn-primary">Login</a>
 				</div>
 
 			</form>
