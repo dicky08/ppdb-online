@@ -7,10 +7,10 @@
 					<a href="#" class="brand-logo logo">INSAN KAMIL</a>
 					<a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="sass.html">Beranda</a></li>
-						<li><a href="badges.html">Info Pendaftaran</a></li>
-						<li><a href="<?= site_url('login') ?>">Login</a></li>
-						<li><a href="<?= site_url('daftar-akun') ?>">Daftar</a></li>
+						<li><a href="#"><i class="fa fa-home"></i> Beranda</a></li>
+						<li><a href="#"><i class="fa fa-refresh"></i> Info Pendaftaran</a></li>
+						<li><a href="<?= site_url('login') ?>"><i class="fa fa-unlock"></i> Login</a></li>
+						<li><a href="<?= site_url('daftar-akun') ?>"><i class="fa fa-unlock-alt"></i> Daftar</a></li>
 					</ul>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 				<img src=" <?= base_url('assets/') ?>img/dash2.jpg" alt="">
 				<div class="caption left-align">
 					<h3 class="light white-text capt">Selalu berusaha menjadi yang terbaik</h3>
-					<h5>The Quality of Number One!!</h5>
+					<h5 style="color: black; font-weight: bold;">Pendidikan utama tentang akhlak!</h5>
 				</div>
 			</li>
 		</ul>
@@ -54,7 +54,7 @@
 	<div class="container">
 		<div class="row ">
 			<div class="col l12 m12 s12 justify-content-around">
-				<h4>Alur Pendaftaran</h4>
+				<h4 style="font-family: arial, sans-serif; font-weight: bold;font-size: 22px;"><i class="fa fa-refresh"></i> Alur Pendaftaran</h4>
 				<ol>
 					<h6>
 						<li>
@@ -138,8 +138,8 @@
 						<span class="card-title activator grey-text text-darken-4">Kegiatan Lomba Melukis<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-						<p>Here is some more information about this product that is only revealed once clicked on.
+						<span class="card-title grey-text text-darken-4">Lomba Melukis<i class="material-icons right">close</i></span>
+						<p>Kegiatan menggambar/melukis juga sering di ikuti oleh TK Insan Kamil
 						</p>
 					</div>
 				</div>
@@ -152,11 +152,11 @@
 						<img class="materialboxed" width="350" src="<?= base_url('assets/') ?>img/tari.jpg">
 					</div>
 					<div class="card-content">
-						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Menari<i class="material-icons right">more_vert</i></span>
+						<span class="card-title activator grey-text text-darken-4">Kegiatan Lomba Menari<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-						<p>Here is some more information about this product that is only revealed once clicked on.
+						<span class="card-title grey-text text-darken-4">Lomba Menari<i class="material-icons right">close</i></span>
+						<p>Kegiatan lomba menari tingkat daerah.
 						</p>
 					</div>
 				</div>
@@ -171,8 +171,8 @@
 						<span class="card-title activator grey-text text-darken-4">Kegiata Lomba Cerdas Cermat <i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-						<p>Here is some more information about this product that is only revealed once clicked on.
+						<span class="card-title grey-text text-darken-4">Lomba cerdas cermat<i class="material-icons right">close</i></span>
+						<p>Kegiatan lomba cerdas cermat tingkat Desa.
 						</p>
 					</div>
 				</div>
@@ -187,8 +187,8 @@
 						<span class="card-title activator grey-text text-darken-4">Pariwisita & Study Tour<i class="material-icons right">more_vert</i></span>
 					</div>
 					<div class="card-reveal">
-						<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-						<p>Here is some more information about this product that is only revealed once clicked on.
+						<span class="card-title grey-text text-darken-4">Study tour<i class="material-icons right">close</i></span>
+						<p>Kegiatasa study tour dilakukan setiap satu tahun sekali guna membimbing anak dalam bidang pengetahuan sejarah.
 						</p>
 					</div>
 				</div>
@@ -246,9 +246,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col m6 s12 l4">
-				<h3><i class="material-icons">supervisor_account</i> Kontak Kami</h3>
-				<h6><i class="material-icons">account_balance</i>Alamat : Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quia debitis maxime ex mollitia voluptate dicta minima? Non, enim numquam?</h6>
-				<h6><i class="material-icons">local_phone</i>No HP : 085496852136</h6>
+				<h4 style="font-family: arial, sans-serif; font-weight: bold;font-size: 22px;"> <i class=" fa fa-home"></i> Kontak Kami</h4>
+				<p><i class=" fa fa-home"></i> Alamat : Jalan Desa Cikopo, No 08 RT006/003. Desa Cikopo. Kec. Bungursari Kab. Purwakarta 41183</p>
+				<p><i class="fa fa-phone"></i> No HP : 085496852136</p>
 			</div>
 		</div>
 	</div>

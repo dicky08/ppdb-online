@@ -1,6 +1,6 @@
 #register {
 	width: 950px;
-	margin: 100px auto;
+	margin: -40px auto;
 	font-family: Viga;
 }
 
@@ -33,7 +33,7 @@ h2 {
 
 #login {
 	width: 450px;
-	margin: 150px auto;
+	margin: 20px auto;
 	font-family: Viga;
 }
 
@@ -44,7 +44,6 @@ h2 {
 	cursor: pointer;
 }
 
-/* BERANDA */
 
 
 /* MOBILE */

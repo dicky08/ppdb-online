@@ -18,12 +18,47 @@ class Ppdb_model extends CI_Model
 
 	function joinTableSiswa($username)
 	{
-		$this->db->select('tabel_pembayaran.status,tabel_pembayaran.nik,tabel_siswa.*')
-			->from('tabel_siswa')
-			->join('tabel_pembayaran', 'tabel_siswa.nik_siswa=tabel_pembayaran.nik')
+		$this->db->select('tabel_pembayaran.status,tabel_pembayaran.no_pembayaran,tabel_siswa.*')
+			->from('tabel_pendaftaran')
+			->join('tabel_siswa', 'tabel_siswa.nik_siswa=tabel_pendaftaran.nik_siswa')
+			->join('tabel_pembayaran', 'tabel_pendaftaran.no_pembayaran=tabel_pembayaran.no_pembayaran')
 			->where("tabel_siswa.username", $username);
 		return	$this->db->get();
 	}
+
+	function joinSiswa()
+	{
+		$this->db->select('tabel_pembayaran.*,tabel_siswa.*')
+			->from('tabel_pendaftaran')
+			->join('tabel_siswa', 'tabel_siswa.nik_siswa=tabel_pendaftaran.nik_siswa')
+			->join('tabel_pembayaran', 'tabel_pendaftaran.no_pembayaran=tabel_pembayaran.no_pembayaran')
+			->order_by('tabel_pembayaran.no_pembayaran');
+		return	$this->db->get();
+	}
+
+	function joinAll($username)
+	{
+		$this->db->select('tabel_siswa.*,tabel_pendaftaran.*,tabel_ibu.*,tabel_ayah.*,tabel_pembayaran.*')
+			->from('tabel_pendaftaran')
+			->join('tabel_siswa', 'tabel_siswa.nik_siswa=tabel_pendaftaran.nik_siswa')
+			->join('tabel_ayah', 'tabel_pendaftaran.nik_ayah=tabel_ayah.nik_ayah')
+			->join('tabel_ibu', 'tabel_pendaftaran.nik_ibu=tabel_ibu.nik_ibu')
+			->where("tabel_siswa.username", $username);
+		return	$this->db->get();
+	}
+
+	function joinAllSiswa($username)
+	{
+		$this->db->select('tabel_siswa.*,tabel_pendaftaran.*,tabel_pembayaran.*,tabel_ibu.*,tabel_ayah.*')
+			->from('tabel_pendaftaran')
+			->join('tabel_ayah', 'tabel_pendaftaran.nik_ayah=tabel_ayah.nik_ayah')
+			->join('tabel_ibu', 'tabel_pendaftaran.nik_ibu=tabel_ibu.nik_ibu')
+			->join('tabel_siswa', 'tabel_siswa.nik_siswa=tabel_pendaftaran.nik_siswa')
+			->join('tabel_pembayaran', 'tabel_pendaftaran.no_pembayaran=tabel_pembayaran.no_pembayaran')
+			->where("tabel_siswa.username", $username);
+		return	$this->db->get();
+	}
+
 	public function uploadFile($name, $path)
 	{
 		if (!file_exists($path))

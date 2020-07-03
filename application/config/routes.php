@@ -53,15 +53,22 @@ $route['default_controller'] = 'auth_user/dashboard';
 
 // USER ACCOUNT 
 $route['daftar-akun']         = 'auth_user';
-$route['registrasi']         = 'auth_user/register';
+$route['registrasi']          = 'auth_user/register';
 $route['user-registrasi']     = 'auth_user/registrasi';
-$route['dataPendaftaran']     = 'user/pendaftaran';
-$route['login']             = 'auth_user/login';
-$route['dashboard']            = 'user/dashboard';
-$route['pembayaran']            = 'user/pembayaran';
-$route['cetakPendaftaran']            = 'user/cetak';
-
+$route['data-Pendaftaran']    = 'user/pendaftaran';
+$route['login']               = 'auth_user/login';
+$route['dashboard']           = 'user/dashboard';
+$route['profile']             = 'user/data_diri';
+$route['pembayaran']          = 'user/pembayaran';
+$route['cetakPendaftaran']    = 'user/cetak';
 
 $route['logout']            = 'user/logout';
+
+// ADMIN
+$route['admin']            = 'admin/login';
+$route['admin/dashboard']  = 'admin';
+$route['dataPendaftaran']  = 'admin/data_pendaftaran';
+$route['dataPembayaran']   = 'admin/data_pembayaran';
+
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;

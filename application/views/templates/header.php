@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $judulAwal ?></title>
 	<!-- BOOTSTRAP -->
-	<link rel="stylesheet" href="<?= base_url('assets/css/fontawesome.min.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('templates/') ?>bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?= base_url('assets/css/materialize.min.css') ?>">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">

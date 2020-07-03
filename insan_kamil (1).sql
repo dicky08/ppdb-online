@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2020 at 09:22 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Jul 03, 2020 at 10:17 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -31,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tabel_admin` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `name` varchar(128) NOT NULL,
+  `nama` varchar(128) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -39,7 +38,7 @@ CREATE TABLE `tabel_admin` (
 -- Dumping data for table `tabel_admin`
 --
 
-INSERT INTO `tabel_admin` (`id_admin`, `username`, `name`, `password`) VALUES
+INSERT INTO `tabel_admin` (`id_admin`, `username`, `nama`, `password`) VALUES
 (1, 'admin', 'jekichan', '0192023a7bbd73250516f069df18b500');
 
 -- --------------------------------------------------------
@@ -57,17 +56,16 @@ CREATE TABLE `tabel_ayah` (
   `pekerjaan_ayah` varchar(128) NOT NULL,
   `alamat_ayah` varchar(255) NOT NULL,
   `photo_ayah` varchar(255) NOT NULL,
-  `no_hp` char(12) NOT NULL,
-  `nik_siswa` char(16) NOT NULL
+  `no_hp` char(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tabel_ayah`
 --
 
-INSERT INTO `tabel_ayah` (`nik_ayah`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `pendidikan_terakhir_ayah`, `pekerjaan_ayah`, `alamat_ayah`, `photo_ayah`, `no_hp`, `nik_siswa`) VALUES
-('3215130809980002', 'jhon', 'medan', '2020-06-13', 'diploma', 'pegawai', 'perum cikopo-1-12-kopo-cikopo-purwakarta', 'ayah_3215130809980002.PNG', '', '3215130802960006'),
-('3215130809980009', 'Beni', 'Cirebon', '2020-06-25', 'SMA', 'pegawai', 'cirebon-1-2-cirebon kulon-cirebon-cirebon', 'ayah_3215130809980009.jpg', '', '3215130802960007');
+INSERT INTO `tabel_ayah` (`nik_ayah`, `nama_ayah`, `tempat_lahir_ayah`, `tanggal_lahir_ayah`, `pendidikan_terakhir_ayah`, `pekerjaan_ayah`, `alamat_ayah`, `photo_ayah`, `no_hp`) VALUES
+('3215130802950003', 'dede aja', 'Karawang', '2020-06-12', 'Diploma', 'Pegawai', 'Kopo-1-2-Dawuan-Cikampek-Karawang', 'ayah_3215130802950003.jpg', '085696254257'),
+('3215130802970002', 'Jhonkar', 'Califronia', '2020-02-11', 'Diploma', 'Pegawai', 'Californiakota-3-2-Dawuan-Cikampek-Karawang', 'ayah_3215130802970002.jpg', '089501259635');
 
 -- --------------------------------------------------------
 
@@ -83,17 +81,16 @@ CREATE TABLE `tabel_ibu` (
   `pendidikan_terakhir_ibu` varchar(50) NOT NULL,
   `pekerjaan_ibu` varchar(128) NOT NULL,
   `alamat_ibu` varchar(255) NOT NULL,
-  `photo_ibu` varchar(255) NOT NULL,
-  `nik_siswa` char(16) NOT NULL
+  `photo_ibu` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tabel_ibu`
 --
 
-INSERT INTO `tabel_ibu` (`nik_ibu`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pendidikan_terakhir_ibu`, `pekerjaan_ibu`, `alamat_ibu`, `photo_ibu`, `nik_siswa`) VALUES
-('3215130809980003', 'aisyah', 'medan', '2020-06-07', 'sarjana', 'pegawai', 'perum cikopo-1-12-kopo-cikopo-purwakarta', 'ibu_3215130809980003.PNG', '3215130802960006'),
-('3215130809980008', 'Kimberly', 'Cirebon', '2020-06-15', 'SMA', 'pegawai', 'cikampek-1-2-cikampek barat-cikampek-karawang', 'ibu_3215130809980008.jpg', '3215130802960007');
+INSERT INTO `tabel_ibu` (`nik_ibu`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lahir_ibu`, `pendidikan_terakhir_ibu`, `pekerjaan_ibu`, `alamat_ibu`, `photo_ibu`) VALUES
+('3215130802950004', 'Aura Kasih', 'Karawang', '2020-06-11', 'Sarjana', 'Pegawai', 'Kopo-1-2-Dawuan-Cikampel-Karawang', 'ibu_3215130802950004.jpg'),
+('3215130802970003', 'Bristie', 'Karawang', '2020-06-02', 'Sarjana', 'Pegawai', 'Kopo-3-3-Dawuan-Cikampel-Karawang', 'ibu_3215130802970003.jpg');
 
 -- --------------------------------------------------------
 
@@ -104,7 +101,6 @@ INSERT INTO `tabel_ibu` (`nik_ibu`, `nama_ibu`, `tempat_lahir_ibu`, `tanggal_lah
 CREATE TABLE `tabel_pembayaran` (
   `no_pembayaran` char(17) NOT NULL,
   `tgl_bayar` date NOT NULL,
-  `nik` char(16) NOT NULL,
   `pemilik_rek` varchar(50) NOT NULL,
   `bank` varchar(50) NOT NULL,
   `bukti_bayar` varchar(255) NOT NULL,
@@ -115,9 +111,9 @@ CREATE TABLE `tabel_pembayaran` (
 -- Dumping data for table `tabel_pembayaran`
 --
 
-INSERT INTO `tabel_pembayaran` (`no_pembayaran`, `tgl_bayar`, `nik`, `pemilik_rek`, `bank`, `bukti_bayar`, `status`) VALUES
-('B1593476951', '2030-06-20', '3215130802960006', 'Maya prili', 'mandiri', 'default.jpg', 'Belum Bayar'),
-('B1593478373', '2030-06-20', '3215130802960007', 'Budi hahaha', 'mandiri', 'default.jpg', 'Sudah Di Konfirmasi');
+INSERT INTO `tabel_pembayaran` (`no_pembayaran`, `tgl_bayar`, `pemilik_rek`, `bank`, `bukti_bayar`, `status`) VALUES
+('B1593507798', '2030-06-20', 'maya prili', 'mandiri', 'bukti1.png', 'Sudah Di Konfirmasi'),
+('B1593572812', '2001-07-20', 'firman', 'mandiri', 'bukti2.jpg', 'Sudah Bayar');
 
 -- --------------------------------------------------------
 
@@ -140,8 +136,8 @@ CREATE TABLE `tabel_pendaftaran` (
 --
 
 INSERT INTO `tabel_pendaftaran` (`no_pendaftaran`, `tgl_daftar`, `nik_siswa`, `nik_ayah`, `nik_ibu`, `id_admin`, `no_pembayaran`) VALUES
-('P001', '2030-06-20', '3215130802960006', '3215130809980002', '3215130809980003', 1, 'B1593476951'),
-('P002', '2030-06-20', '3215130802960007', '3215130809980009', '3215130809980008', 1, 'B1593478373');
+('P01', '2030-06-20', '3215130802960002', '3215130802950003', '3215130802950004', 1, 'B1593507798'),
+('P02', '2001-07-20', '3215130802970001', '3215130802970002', '3215130802970003', 1, 'B1593572812');
 
 -- --------------------------------------------------------
 
@@ -172,8 +168,8 @@ CREATE TABLE `tabel_siswa` (
 --
 
 INSERT INTO `tabel_siswa` (`nik_siswa`, `username`, `nama_lengkap`, `nama_panggilan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `agama`, `alamat`, `anak_ke`, `jmlh_saudara_kandung`, `berat_badan`, `tinggi_badan`, `gol_darah`, `photo`) VALUES
-('3215130802960006', 'maya08', 'Maya prili', 'May', 'perempuan', 'kopo', '2020-06-12', 'islam', 'perum cikopo-1-12-kopo-Cikopo-Purwakarta', 1, 2, 49, 160, 'O', 'anak_3215130802960006.PNG'),
-('3215130802960007', 'budi08', 'Budi hahaha', 'haha', 'laki-laki', 'karawang', '2020-06-19', 'islam', 'pawarengan-2-1-sentul-cikampek-karawang', 1, 4, 49, 170, 'A', 'anak_3215130802960007.jpg');
+('3215130802960002', 'maya08', 'maya prili', 'may', 'perempuan', 'karawang', '2020-06-01', 'islam', 'cikopo-1-2-kopo-cikopo-purwakarta', 1, 2, 52, 165, 'B', 'anak_3215130802960002.jpg'),
+('3215130802970001', 'firman', 'firman', 'syah', 'laki-laki', 'krw', '2020-06-17', 'islam', 'pawarengan-1-2-dawuan-cikmpk-krw', 1, 2, 50, 165, 'A', 'anak_3215130802970001.jpg');
 
 --
 -- Indexes for dumped tables

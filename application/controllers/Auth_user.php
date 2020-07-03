@@ -13,6 +13,22 @@ class Auth_user extends CI_Controller
 
 	public function index()
 	{
+		$kode = $this->ppdb->getAll('tabel_pendaftaran')->result_array();
+		foreach ($kode as $k) {
+			# code...
+			if (empty($k)) {
+				$no = "1";
+				$data['kode'] = "0" . $no++;
+			} else {
+
+				$noPendaftaran = $k['no_pendaftaran'];
+				$split = str_split($noPendaftaran);
+				$p   = $split[0];
+				$nol = $split[1];
+				$satu = $split[2] + 1;
+				$data['kode'] = $p . $nol . $satu;
+			}
+		}
 		$data['title'] = "Pendaftaran akun";
 		$this->load->view('auth/header', $data);
 		$this->load->view('auth/register', $data);
@@ -21,10 +37,7 @@ class Auth_user extends CI_Controller
 
 	public function dashboard()
 	{
-		$sesi = $this->session->userdata('sesi');
-		if ($sesi !== null) {
-			redirect('exam');
-		}
+
 		$data['judulAwal'] = "PPDB ONLINE";
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/content');
@@ -33,6 +46,23 @@ class Auth_user extends CI_Controller
 
 	public function register()
 	{
+		$kode = $this->ppdb->getAll('tabel_pendaftaran')->result_array();
+		foreach ($kode as $k) {
+			# code...
+			if (empty($k)) {
+				$no = "1";
+				$data['kode'] = "0" . $no++;
+			} else {
+
+				$noPendaftaran = $k['no_pendaftaran'];
+				$split = str_split($noPendaftaran);
+				$p   = $split[0];
+				$nol = $split[1];
+				$satu = $split[2] + 1;
+				$data['kode'] =  $nol . $satu;
+			}
+		}
+
 		$data['title'] = "Pendaftaran akun";
 		$this->load->view('auth/header', $data);
 		$this->load->view('auth/register', $data);
@@ -41,6 +71,23 @@ class Auth_user extends CI_Controller
 
 	public function registrasi()
 	{
+		$kode = $this->ppdb->getAll('tabel_pendaftaran')->result_array();
+		foreach ($kode as $k) {
+			# code...
+			if (empty($k)) {
+				$no = "1";
+				$data['kode'] = "0" . $no++;
+			} else {
+
+				$noPendaftaran = $k['no_pendaftaran'];
+				$split = str_split($noPendaftaran);
+				$p   = $split[0];
+				$nol = $split[1];
+				$satu = $split[2] + 1;
+				$data['kode'] =  $nol . $satu;
+			}
+		}
+
 		$data['title'] = "Pendaftaran akun";
 
 		$validation = Validate::validasi();
@@ -92,6 +139,7 @@ class Auth_user extends CI_Controller
 		} else {
 			if (isset($_POST['submit'])) {
 				# code....
+
 				$pathAnak = './assets/img-pendaftaran/photo_siswa/';
 				$username 			= $this->input->post('username');
 				$nik 				= $this->input->post('nik');
@@ -152,6 +200,7 @@ class Auth_user extends CI_Controller
 				$extIbu 		= $nikIbu . $photoAnak['file_ext'];
 				$nameIbu			= $photoIbu['file_name'];
 				rename($pathAnak . $nameIbu, $pathAnak . "ibu" . "_" . $extIbu);
+				$kode 		 = $this->input->post('kode');
 
 
 
@@ -180,9 +229,8 @@ class Auth_user extends CI_Controller
 					'tanggal_lahir_ayah'  		=> $tanggalLahirAyah,
 					'pendidikan_terakhir_ayah'  => $pendAyah,
 					'pekerjaan_ayah'  			=> $pekerjaanAyah,
-					'alamat_ayah'  					=> $alamatAyah . "-" . $rtAyah . "-" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
+					'alamat_ayah'  				=> $alamatAyah . "-" . $rtAyah . "-" . $rwAyah . "-" . $desaAyah . "-" . $kecAyah . "-" . $kabAyah,
 					'photo_ayah'  				=> "ayah" . "_" . $extAyah,
-					'nik_siswa'  				=> $nik
 				];
 
 				$dataIbu = [
@@ -194,10 +242,9 @@ class Auth_user extends CI_Controller
 					'pekerjaan_ibu'  			=> $pekerjaanIbu,
 					'alamat_ibu'  				=> $alamatIbu . "-" . $rtIbu . "-" . $rwIbu . "-" . $desaIbu . "-" . $kecIbu . "-" . $kabIbu,
 					'photo_ibu'  				=> "ibu" . "_" . $extIbu,
-					'nik_siswa'  				=> $nik
 				];
 				$dataPendaftaran = [
-					'no_pendaftaran' => 'P002',
+					'no_pendaftaran' => "P" . $kode,
 					'tgl_daftar'	 => date('d-m-y'),
 					'nik_siswa'		 => $nik,
 					'nik_ayah'  	 => $nikAyah,
@@ -208,13 +255,13 @@ class Auth_user extends CI_Controller
 				$dataPembayaran = [
 					'no_pembayaran'  	=> 'B' . time(),
 					'tgl_bayar'	 		=> date('d-m-y'),
-					'nik'	 			=> $nik,
-					'pemilik_rek'	=> $namaLengkap,
+					'pemilik_rek'		=> $namaLengkap,
 					'bank'				=> 'mandiri',
 					'bukti_bayar' 		=> 'default.jpg',
-					'status'			=> "Belum Bayar"
+					'status'			=> "Sudah Bayar"
 
 				];
+
 
 				$this->ppdb->insert_data($dataAnak, 'tabel_siswa');
 				$this->ppdb->insert_data($dataAyah, 'tabel_ayah');
@@ -235,7 +282,7 @@ class Auth_user extends CI_Controller
 		$validation = Validate::validasi();
 
 		$this->form_validation->set_rules('username', 'Username', 'required|trim', $validation, TRUE);
-		$this->form_validation->set_rules('tgl_lahir', 'Password', 'required|trim|min_length[8]', $validation, TRUE);
+		$this->form_validation->set_rules('tgl_lahir', 'Password', 'required|trim', $validation, TRUE);
 		if ($this->form_validation->run() === false) {
 			$this->load->view('auth/header', $data);
 			$this->load->view('auth/login', $data);

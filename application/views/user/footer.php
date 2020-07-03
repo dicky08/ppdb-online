@@ -1,7 +1,7 @@
 <footer class="main-footer">
 
-    <strong>Copyright &copy; 2020 </strong> All rights
-    reserved.
+	<strong>Copyright &copy; 2020 </strong> TK Insan Kamil |
+	All rights reserved.
 </footer>
 
 
@@ -11,7 +11,7 @@
 <script src="<?= base_url('templates/'); ?>bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.bridge('uibutton', $.ui.button);
+	$.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?= base_url('templates/'); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
