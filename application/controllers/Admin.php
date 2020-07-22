@@ -32,6 +32,7 @@ class Admin extends CI_Controller
 		$database = $this->ppdb->getOneData(['username' => $sesi['username']], 'tabel_admin')->row_array();
 		$data['nama'] = $database['nama'];
 		$data['dataSiswa'] = $this->ppdb->joinSiswa()->result_array();
+		
 		$data['title'] = 'Data Pendaftaran';
 		$this->load->view('templates_admin/header', $data);
 		$this->load->view('templates_admin/navbar', $data);
