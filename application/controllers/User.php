@@ -132,7 +132,7 @@ class User extends CI_Controller
 		$mpdf = new \Mpdf\Mpdf();
 		$data['sesi'] = $this->session->userdata('sesi');
 		$sesi = $data['sesi'];
-		$data['pendaftaran'][] = $this->ppdb->joinAll($sesi['username'])->row_array();
+		$data['pendaftaran'][] = $this->ppdb->joinAllSiswa($sesi['username'])->row_array();
 
 		foreach ($data['pendaftaran'] as $p) {
 			$data['nama_lengkap']    = $p['nama_lengkap'];

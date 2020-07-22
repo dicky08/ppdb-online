@@ -7,6 +7,7 @@
 		<div class="box">
 			<div class="box-header">
 				<h3 class="box-title" style="margin-bottom: 10px;">Table Siswa</h3>
+				<a href="<?= site_url('cetakPendaftaran') ?>" target="_blank" class="btn btn-primary"><i class="fa fa-print"> Cetak</i></a>
 
 			</div>
 

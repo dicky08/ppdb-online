@@ -88,6 +88,19 @@ class Admin extends CI_Controller
 			}
 		}
 	}
+
+	public function cetakPendaftaran()
+	{
+		$mpdf = new \Mpdf\Mpdf();
+		$sesi = $this->session->userdata('sesi');
+		$database = $this->ppdb->getOneData(['username' => $sesi['username']], 'tabel_admin')->row_array();
+		$data['nama'] = $database['nama'];
+		$data['dataSiswa'] = $this->ppdb->joinSiswa()->result_array();
+		$data['title'] = 'Data Pendaftaran';
+		$html = $this->load->view('admin/cetakPendaftaran', $data, TRUE);
+		$mpdf->WriteHtml($html);
+		$mpdf->Output();
+	}
 	public function logout()
 	{
 		$this->session->unset_userdata('sesi');

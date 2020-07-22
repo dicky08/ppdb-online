@@ -69,6 +69,7 @@ $route['admin']            = 'admin/login';
 $route['admin/dashboard']  = 'admin';
 $route['dataPendaftaran']  = 'admin/data_pendaftaran';
 $route['dataPembayaran']   = 'admin/data_pembayaran';
+$route['cetakPendaftaran']   = 'admin/cetakPendaftaran';
 
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
